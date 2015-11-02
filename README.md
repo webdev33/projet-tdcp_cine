@@ -1,6 +1,11 @@
 MovieSearch
 ===========
 
+MovieSearch vous géolocalise et trouve les cinéma près de chez vous.
+On peut consulter les films à l'affiche pour chaque cinéma.
+
+A l'avenir, il faudrais avoir la possibilité de reserver des places en ligne. Disposer d'une zone membres et d'une newsletters.
+
 Installation composer
 ---------------------
 
