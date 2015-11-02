@@ -31,3 +31,5 @@ Installation Tdcp-cine
     php app/console doctrine:schema:update --force
 
     sh bash/chmod.sh
+
+Le dump SQL pour la liste des cinéma se trouve à la racine sous le nom "cinema.sql"
