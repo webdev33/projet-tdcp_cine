@@ -12,22 +12,22 @@ L'idéal serait de pouvoir intégrer une API pour trouver les films, du genre "A
 Installation composer
 ---------------------
 
-curl -sS https://getcomposer.org/installer | php
+    curl -sS https://getcomposer.org/installer | php
 
-mv composer.phar /usr/local/bin/composer
+    mv composer.phar /usr/local/bin/composer
 
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 
 Installation Tdcp-cine
 ----------------------
 
-git clone https://github.com/WildCodeSchool/projet-tdcp_cine.git
+    git clone https://github.com/WildCodeSchool/projet-tdcp_cine.git
 
-cd MovieSearch
+    cd MovieSearch
 
-composer install
+    composer install
 
-php app/console doctrine:schema:update --force
+    php app/console doctrine:schema:update --force
 
-sh bash/chmod.sh
+    sh bash/chmod.sh
