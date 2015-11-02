@@ -1,0 +1,83 @@
+body {
+    background-image: url(../images/tdcp.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+h1 {
+    font-family: 'Diplomata SC', cursive !important;
+    color: #AE1C1C !important;
+    font-size: 30px !important;
+}
+h1 a{
+    font-family: 'Diplomata SC', cursive !important;
+    color: #AE1C1C !important;
+    font-size: 30px !important;
+    text-decoration: none !important;
+}
+.text-center {
+    margin-top: 60px !important;
+    margin-bottom: -65px;
+    text-align: center;
+}
+#cine {
+    margin-top: 140px;
+}
+#search {
+    margin-top: 50px;
+}
+.navbar-toggle {
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: left !important;
+    margin-bottom: 8px;
+    margin-left: 15px !important;
+    margin-top: 8px;
+    padding: 9px 10px;
+    position: relative;
+}
+.navbar-default {
+    background-color: transparent !important;
+    border: none !important;
+}
+.nav > li > a {
+    color: #000;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+}
+.btn-primary {
+    background-color: #AE1C1C !important;
+    border-color: #881414 !important;
+    color: #fff;
+}
+.form-control {
+    height: 45px !important;
+    border-radius: 6px !important;
+    background-color: #AE1C1C !important;
+    border-color: #881414 !important;
+    color: #fff !important;
+}
+.btn {
+    height: 45px !important;
+    background-color: #333!important;
+    border-color: #881414!important;
+    color: #fff !important;
+    border-radius: 6px !important;
+}
+.btn-default.active {
+    background: #AE1C1C !important;
+}
+.form-control::-moz-placeholder {
+    color: #FFF !important;
+    opacity: 1 !important;
+    text-align: center;
+}
+.navbar-toggle {
+    background: #333 !important;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background: #AE1C1C !important;
+}

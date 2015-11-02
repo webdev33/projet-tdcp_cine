@@ -1,0 +1,1240 @@
+{% block stylesheets %}
+
+    <link href="{{ asset('css/tdcp.css') }}" rel="stylesheet">
+
+    {% include 'CineSearchTdcpBundle:Accueil:css.html.twig' %}
+{% endblock %}{% block menu %}{% include 'CineSearchTdcpBundle:Accueil:menu.html.twig' %}{% endblock %}
+{% block body %}<h1 class="text-center"><a href="{{ path('index') }}">Movie search</a></h1>
+  <div class="frontal-cine">
+    <div class="caption-frontal">
+      <table style="width: 100%;height: 100%">
+        <tr>
+          <td style="text-align: center; ">
+            <div class="nom-acteur nom-cine"><span class="ht">Cinéma</span> <h2>Le Dunois</h2>
+            </div>
+          </td>
+        </tr>
+        <div class="meta-front">23 Rue Lambert-Licors -  Ch&acirc;teaudun</div>
+      </table>
+    </div>
+    <img src="http://www.cinefil.com/img/cine.jpg" alt="film1">
+  </div>
+<div class="container-fluid corps-de-page">
+  <div class="modal fade" id="single-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p class="modal-title" id="myModalLabel"></p>
+        </div>
+        <div class="modal-body" id="my-video-modal">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="takemargintopextra">
+    <h2 class="seances h2-cinema-page adjust-shedule-height">Films projetés</h2>
+    <div class="subtitles"> <div class="underline col-md-2"></div></div><br class="perte-mobil">
+    <div id="resultats-vil" class="resultats-ville">
+      <ul>
+        <li itemscope itemtype="http://schema.org/ScreeningEvent">
+          <span id="le-dernier-chasseur-de-sorcieres-NL" class="NL-scroll"></span>
+          <div id="unefichefilm" class="nouvel-interface le-dernier-chasseur-de-sorcieres" >
+            <meta itemprop="name" content="Le Dernier chasseur de sorci&egrave;res">
+            <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+            <meta itemprop="name" content="Le Dunois">
+            <meta itemprop="screenCount" content="3"/>
+            <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+          </div>
+          <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+            <div class="img-film">
+                <img itemprop="image" src="http://images.cinefil.com/movies/1048615_112x170.jpg" />
+            </div>
+            <div class="fiche-infos">
+              <h3 itemprop="name">Le Dernier chasseur de sorci&egrave;res</h3>
+              <meta itemprop="datePublished" content="2015-10-28"/>
+              <div class="note">
+                <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span>
+                <meta itemprop="duration" content="PT106M"/>
+                <div class="separateur">|</div><div class="duree"> 1h46min</div>
+              </div><br>
+              <div class="realisateur" >(<span itemprop="genre">Fantastique</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/breck-eisner"><span itemprop="name">Breck Eisner</span></p></div>
+              <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+                <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9783,"video_url":"vid_55eff95892a7f","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048617_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fle-dernier-chasseur-de-sorcieres"}>
+                  <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048617_570x300.jpg"/>
+                  <meta itemprop="name" content="Le Dernier chasseur de sorci&egrave;res"/>
+                  <meta itemprop="description" content="Bande annonce  - VF"/>
+                  <meta itemprop="uploadDate" content="2015-09-09 11:18:16"/>
+                  Bande-Annonce
+                </button>
+              </div>
+              <div class="Synopsis-infos" itemprop="description">
+                <p>Un chasseur de sorcières immortel fait équipe avec son meilleur ennemi pour empêcher le sabbat de New York de libérer la peste sur le monde...</p>
+              </div>
+            </div>
+          </div>
+          <div class="horaires">
+            <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+              <div class="btn-group nav-tabs boutons-programmation boutons-programmation-toggle" id="selection-jour" role="group" aria-label="...">
+               <button  id="2015-10-281" href="#12015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-291" href="#12015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-301" href="#12015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-311" href="#12015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-011" href="#12015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-021" href="#12015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-031" href="#12015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+             </div>
+             <div class="tab-content position-nav">
+              <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=12015-10-28 >
+               <meta itemprop="startDate" content="2015-10-28 14:00"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+               <meta itemprop="startDate" content="2015-10-28 20:20"/>
+               <button type="button" class="btn btn-default"><div class="h4">20:20</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+             <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=12015-10-29 >
+               <meta itemprop="startDate" content="2015-10-29 20:20"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">20:20</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+             <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=12015-10-30 >
+               <meta itemprop="startDate" content="2015-10-30 16:00"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue">VF</div></button>
+               <meta itemprop="startDate" content="2015-10-30 22:10"/>
+               <button type="button" class="btn btn-default"><div class="h4">22:10</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+             <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=12015-10-31 >
+               <meta itemprop="startDate" content="2015-10-31 16:00"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue">VF</div></button>
+               <meta itemprop="startDate" content="2015-10-31 22:20"/>
+               <button type="button" class="btn btn-default"><div class="h4">22:20</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+             <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=12015-11-01 >
+               <meta itemprop="startDate" content="2015-11-01 20:20"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">20:20</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+             <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=12015-11-02 >
+               <meta itemprop="startDate" content="2015-11-02 20:20"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">20:20</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+             <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=12015-11-03 >
+               <meta itemprop="startDate" content="2015-11-03 20:20"/>
+               <button type="button" class="btn btn-default premier"><div class="h4">20:20</div><div class="underline"></div><div class"langue">VF</div></button>
+             </div>
+           </div>
+         </div>
+       </li>
+       <li itemscope itemtype="http://schema.org/ScreeningEvent">
+        <span id="the-walk-rever-plus-haut-NL" class="NL-scroll"></span>
+        <div id="unefichefilm" class="nouvel-interface the-walk-rever-plus-haut" >
+          <meta itemprop="name" content="The Walk &ndash; R&ecirc;ver Plus Haut">
+          <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+          <meta itemprop="name" content="Le Dunois">
+          <meta itemprop="screenCount" content="3"/>
+          <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+        </div>
+        <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+          <div class="img-film">
+              <img itemprop="image" src="http://images.cinefil.com/movies/1048644_112x170.jpg" />
+          </div>
+          <div class="fiche-infos">
+            <h3 itemprop="name">The Walk &ndash; R&ecirc;ver Plus Haut</h3>
+            <meta itemprop="datePublished" content="2015-10-28"/>
+            <div class="note">
+              <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span>
+              <meta itemprop="duration" content="PT123M"/>
+              <div class="separateur">|</div><div class="duree"> 2h3min</div>
+            </div><br>
+            <div class="realisateur" >(<span itemprop="genre">Drame</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/robert-zemeckis"><span itemprop="name">Robert Zemeckis</span></p></div>
+            <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+              <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9802,"video_url":"vid_55f040156d891","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048645_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fthe-walk-rever-plus-haut"}>
+                <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048645_570x300.jpg"/>
+                <meta itemprop="name" content="The Walk &ndash; R&ecirc;ver Plus Haut"/>
+                <meta itemprop="description" content="Bande annonce - VF"/>
+                <meta itemprop="uploadDate" content="2015-09-09 16:20:05"/>
+                Bande-Annonce
+              </button>
+            </div>
+            <div class="Synopsis-infos" itemprop="description">
+              <p>Biopic sur le funambule français Philippe Petit, célèbre pour avoir joint en 1974 les deux tours du World Trade Center sur un fil, suspendu au-dessus du vide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="horaires">
+          <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+            <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+             <button  id="2015-10-282" href="#22015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-292" href="#22015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-302" href="#22015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-312" href="#22015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-012" href="#22015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-022" href="#22015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-032" href="#22015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+           </div>
+           <div class="tab-content position-nav">
+            <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=22015-10-28 >
+             <meta itemprop="startDate" content="2015-10-28 14:00"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+             <meta itemprop="startDate" content="2015-10-28 20:10"/>
+             <button type="button" class="btn btn-default"><div class="h4">20:10</div><div class="underline"></div><div class"langue"><span class="logo-3D" itemprop="videoFormat"> 3D</span>VF</div></button>
+           </div>
+           <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=22015-10-29 >
+             <meta itemprop="startDate" content="2015-10-29 20:10"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue"><span class="logo-3D" itemprop="videoFormat"> 3D</span>VF</div></button>
+           </div>
+           <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=22015-10-30 >
+             <meta itemprop="startDate" content="2015-10-30 20:10"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue">VF</div></button>
+           </div>
+           <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=22015-10-31 >
+             <meta itemprop="startDate" content="2015-10-31 20:10"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue"><span class="logo-3D" itemprop="videoFormat"> 3D</span>VF</div></button>
+           </div>
+           <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=22015-11-01 >
+             <meta itemprop="startDate" content="2015-11-01 16:00"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue"><span class="logo-3D" itemprop="videoFormat"> 3D</span>VF</div></button>
+           </div>
+           <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=22015-11-02 >
+             <meta itemprop="startDate" content="2015-11-02 20:10"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue">VF</div></button>
+           </div>
+           <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=22015-11-03 >
+             <meta itemprop="startDate" content="2015-11-03 20:10"/>
+             <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue"><span class="logo-3D" itemprop="videoFormat"> 3D</span>VF</div></button>
+           </div>
+         </div>
+       </div>
+     </li>
+     <li itemscope itemtype="http://schema.org/ScreeningEvent">
+      <span id="les-nouvelles-aventures-d-aladin-NL" class="NL-scroll"></span>
+      <div id="unefichefilm" class="nouvel-interface les-nouvelles-aventures-d-aladin" >
+        <meta itemprop="name" content="Les Nouvelles Aventures d&#039;Aladin">
+        <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+        <meta itemprop="name" content="Le Dunois">
+        <meta itemprop="screenCount" content="3"/>
+        <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+      </div>
+      <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+        <div class="img-film">
+            <img itemprop="image" src="http://images.cinefil.com/movies/1048192_112x170.jpg" />
+        </div>
+        <div class="fiche-infos">
+          <h3 itemprop="name">Les Nouvelles Aventures d&#039;Aladin</h3>
+          <meta itemprop="datePublished" content="2015-10-14"/>
+          <div class="note">
+              <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+               <meta itemprop="ratingValue" content="3.5"/>
+               <meta itemprop="ratingCount" content="2"/>
+               <meta itemprop="reviewCount" content="2"/>
+               <meta itemprop="bestRating" content="5"/>
+               <meta itemprop="worstRating" content="1"/>
+             </div>
+             <i class="glyphicon glyphicon-star"></i>
+             <i class="glyphicon glyphicon-star"></i>
+             <i class="glyphicon glyphicon-star"></i>
+             <i class="glyphicon glyphicon-star"></i>
+             <i class="glyphicon glyphicon-star-empty"></i>
+           <meta itemprop="duration" content="PT107M"/>
+           <div class="separateur">|</div><div class="duree"> 1h47min</div>
+         </div><br>
+         <div class="realisateur" >(<span itemprop="genre">Com&eacute;die</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/arthur-benzaquen"><span itemprop="name">Arthur Benzaquen</span></p></div>
+         <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+          <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9659,"video_url":"vid_55de15e6bff1d","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048193_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fles-nouvelles-aventures-d-aladin"}>
+            <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048193_570x300.jpg"/>
+            <meta itemprop="name" content="Les Nouvelles Aventures d&#039;Aladin"/>
+            <meta itemprop="description" content="Bande annonce #1 - VF"/>
+            <meta itemprop="uploadDate" content="2015-08-26 21:39:18"/>
+            Bande-Annonce
+          </button>
+        </div>
+        <div class="Synopsis-infos" itemprop="description">
+        <p>À la veille de Noël, <i>Sam </i>et son meilleur pote <i>Khalid </i>se déguisent en Père-Noël afin de dérober tout ce qu’ils peuvent aux Galeries Lafayette. Mais <i>Sam </i>est rapidement coincé par des enfants et doit leur raconter une histoire... l’histoire d’Aladin... enfin Sa version.&nbsp;</p><p>Dans la peau d’<i>Aladin</i>, Sam commence alors un voyage au coeur de Bagdad, ville aux mille et une richesses... Hélas derrière le folklore, le peuple subit la tyrannie du terrible Vizir connu pour sa férocité et son haleine douteuse. Aladin le jeune voleur, aidé de son Génie, pourra-t il déjouer les plans diaboliques du Vizir, sauver Khalid et conquérir le coeur de la Princesse <i>Shallia </i>? En fait oui, mais on ne va pas vous mentir, ça ne va pas être facile !</p>
+        </div>
+      </div>
+    </div>
+    <div class="horaires">
+      <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+        <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+         <button  id="2015-10-283" href="#32015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-293" href="#32015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-303" href="#32015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-313" href="#32015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-013" href="#32015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-023" href="#32015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-033" href="#32015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+       </div>
+       <div class="tab-content position-nav">
+        <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=32015-10-28 >
+         <meta itemprop="startDate" content="2015-10-28 16:00"/>
+         <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+       </div>
+       <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=32015-10-29 >
+         <meta itemprop="startDate" content="2015-10-29 15:45"/>
+         <button type="button" class="btn btn-default premier"><div class="h4">15:45</div><div class="underline"></div><div class"langue"> VF</div></button>
+       </div>
+       <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=32015-10-30 >
+         <meta itemprop="startDate" content="2015-10-30 14:00"/>
+         <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+         <meta itemprop="startDate" content="2015-10-30 18:20"/>
+         <button type="button" class="btn btn-default"><div class="h4">18:20</div><div class="underline"></div><div class"langue"> VF</div></button>
+       </div>
+       <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=32015-10-31 >
+         <meta itemprop="startDate" content="2015-10-31 14:00"/>
+         <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+         <meta itemprop="startDate" content="2015-10-31 20:20"/>
+         <button type="button" class="btn btn-default"><div class="h4">20:20</div><div class="underline"></div><div class"langue"> VF</div></button>
+       </div>
+       <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=32015-11-01 >
+         <meta itemprop="startDate" content="2015-11-01 14:00"/>
+         <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+       </div>
+       <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=32015-11-02 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=32015-11-03 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+    </div>
+  </div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="hotel-transylvanie-2-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface hotel-transylvanie-2" >
+    <meta itemprop="name" content="Hotel Transylvanie 2">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048593_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Hotel Transylvanie 2</h3>
+      <meta itemprop="datePublished" content="2015-10-07"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="3"/>
+           <meta itemprop="ratingCount" content="2"/>
+           <meta itemprop="reviewCount" content="2"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT89M"/>
+       <div class="separateur">|</div><div class="duree"> 1h29min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Film d&#039;animation</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/genndy-tartakovsky"><span itemprop="name">Genndy Tartakovsky</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9902,"video_url":"vid_560ece5702004","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048594_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fhotel-transylvanie-2"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048594_570x300.jpg"/>
+        <meta itemprop="name" content="Hotel Transylvanie 2"/>
+        <meta itemprop="description" content="Bande annonce finale  - VF"/>
+        <meta itemprop="uploadDate" content="2015-10-02 20:35:03"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+    <p><i>Dracula</i> et sa bande de monstres déjantés sont de retour ! À l’hôtel Transylvanie, beaucoup de choses ont évolué : <i>Dracula</i> a enfin accepté de dégeler son cœur et d’ouvrir la porte aux humains. Mais il se fait du souci pour son petit-fils, <i>Dennis</i> : mi-humain mi-monstre, ce gamin est bien trop adorable à son goût, et il risque de faire un piètre vampire !&nbsp;</p><p>Alors, quand les parents du petit, <i>Mavis</i> et <i>Johnny</i>, s’absentent, <i>Drac</i> fait appel à ses amis <i>Frank</i>, <i>Murray</i>, <i>Wayne</i> et <i>Griffin</i> pour apprendre à <i>Dennis</i> à devenir un monstre, un vrai. Personne ne s’attendait à ce que <i>Vlad</i>, le père de <i>Drac</i> – un vampire très grincheux et très vieille école – choisisse ce moment pour débarquer à l’hôtel. Et quand il découvre que son arrière-petit-fils a du sang humain, rien ne va plus…</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-284" href="#42015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-294" href="#42015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-304" href="#42015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-314" href="#42015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-014" href="#42015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-024" href="#42015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-034" href="#42015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>
+     </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=42015-10-28 >
+     <meta itemprop="startDate" content="2015-10-28 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=42015-10-29 >
+     <meta itemprop="startDate" content="2015-10-29 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=42015-10-30 >
+     <meta itemprop="startDate" content="2015-10-30 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+     <meta itemprop="startDate" content="2015-10-30 17:30"/>
+     <button type="button" class="btn btn-default"><div class="h4">17:30</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=42015-10-31 >
+     <meta itemprop="startDate" content="2015-10-31 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+     <meta itemprop="startDate" content="2015-10-31 15:45"/>
+     <button type="button" class="btn btn-default"><div class="h4">15:45</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=42015-11-01 >
+     <meta itemprop="startDate" content="2015-11-01 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=42015-11-02 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=42015-11-03 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="pan-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface pan" >
+    <meta itemprop="name" content="Pan">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1049811_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Pan</h3>
+      <meta itemprop="datePublished" content="2015-10-21"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="2.1666666666667"/>
+           <meta itemprop="ratingCount" content="6"/>
+           <meta itemprop="reviewCount" content="6"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT111M"/>
+       <div class="separateur">|</div><div class="duree"> 1h51min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Fantastique</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/joe-wright"><span itemprop="name">Joe Wright</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9904,"video_url":"vid_5612a572c8b6c","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1049812_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fpan"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1049812_570x300.jpg"/>
+        <meta itemprop="name" content="Pan"/>
+        <meta itemprop="description" content="Bande annonce - VF"/>
+        <meta itemprop="uploadDate" content="2015-10-05 18:29:38"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+      <p>Proposant un nouveau regard sur l'origine des personnages légendaires créés par J.M. Barrie, le film s'attache à l'histoire d'un orphelin enlevé au Pays Imaginaire. Là-bas, il vivra une aventure palpitante et bravera maints dangers, tout en découvrant son destin : devenir le héros connu dans le monde entier sous le nom de Peter Pan.</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-285" href="#52015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-295" href="#52015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-305" href="#52015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-315" href="#52015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-015" href="#52015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-025" href="#52015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-035" href="#52015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>
+     </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=52015-10-28 >
+     <meta itemprop="startDate" content="2015-10-28 16:15"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">16:15</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=52015-10-29 >
+     <meta itemprop="startDate" content="2015-10-29 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=52015-10-30 >
+     <meta itemprop="startDate" content="2015-10-30 16:20"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">16:20</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=52015-10-31 >
+     <meta itemprop="startDate" content="2015-10-31 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=52015-11-01 >
+     <meta itemprop="startDate" content="2015-11-01 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=52015-11-02 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=52015-11-03 >
+   <meta itemprop="startDate" content="2015-11-03 18:00"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">18:00</div><div class="underline"></div><div class"langue">VF</div></button>
+ </div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="seul-sur-mars-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface seul-sur-mars" >
+    <meta itemprop="name" content="Seul sur Mars">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048610_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Seul sur Mars</h3>
+      <meta itemprop="datePublished" content="2015-10-21"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="3.5"/>
+           <meta itemprop="ratingCount" content="8"/>
+           <meta itemprop="reviewCount" content="8"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT141M"/>
+       <div class="separateur">|</div><div class="duree"> 2h21min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Science-Fiction</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/ridley-scott"><span itemprop="name">Ridley Scott</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9978,"video_url":"vid_56265e332a9ee","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048653_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fseul-sur-mars"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048653_570x300.jpg"/>
+        <meta itemprop="name" content="Seul sur Mars"/>
+        <meta itemprop="description" content="Bande annonce finale -  VF"/>
+        <meta itemprop="uploadDate" content="2015-10-20 17:30:59"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+    <p>Au cours d’une mission spatiale habitée sur Mars, et à la suite d’un violent orage, l’astronaute <i>Mark Watney </i>est laissé pour mort et abandonné sur place par son équipage. Mais <i>Watney</i> a survécu et se retrouve seul sur cette planète hostile.&nbsp;</p><p>Avec de maigres provisions, il ne doit compter que sur son ingéniosité, son bon sens et son intelligence pour survivre et trouver un moyen d’alerter la Terre qu’il est encore vivant. À des millions de kilomètres de là, la <i>NASA</i> et une équipe de scientifiques internationaux travaillent sans relâche pour ramener "le Martien" sur terre, pendant que, en parallèle, ses coéquipiers tentent secrètement d’organiser une audacieuse voire impossible mission de sauvetage. </p></div>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-286" href="#62015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-296" href="#62015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-306" href="#62015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-316" href="#62015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-016" href="#62015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-026" href="#62015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-036" href="#62015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button></div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=62015-10-28 >
+     <meta itemprop="startDate" content="2015-10-28 20:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">20:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=62015-10-29 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=62015-10-30 >
+   <meta itemprop="startDate" content="2015-10-30 20:00"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">20:00</div><div class="underline"></div><div class"langue"><span class="logo-3D" itemprop="videoFormat"> 3D</span>VF</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=62015-10-31 >
+   <meta itemprop="startDate" content="2015-10-31 20:00"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">20:00</div><div class="underline"></div><div class"langue">VF</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=62015-11-01 >
+   <meta itemprop="startDate" content="2015-11-01 20:00"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">20:00</div><div class="underline"></div><div class"langue">VF</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=62015-11-02 >
+  <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+</div>
+<div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=62015-11-03 >
+ <meta itemprop="startDate" content="2015-11-03 20:00"/>
+ <button type="button" class="btn btn-default premier"><div class="h4">20:00</div><div class="underline"></div><div class"langue">VF</div></button>
+</div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="the-visit-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface the-visit" >
+    <meta itemprop="name" content="The Visit">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048434_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">The Visit</h3>
+      <meta itemprop="datePublished" content="2015-10-07"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="3.5"/>
+           <meta itemprop="ratingCount" content="6"/>
+           <meta itemprop="reviewCount" content="6"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT94M"/>
+       <div class="separateur">|</div><div class="duree"> 1h34min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Thriller</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/m-night-shyamalan"><span itemprop="name">M. Night Shyamalan</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9729,"video_url":"vid_55e44b2492d0f","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1049444_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fthe-visit"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1049444_570x300.jpg"/>
+        <meta itemprop="name" content="The Visit"/>
+        <meta itemprop="description" content="Bande annonce - VF"/>
+        <meta itemprop="uploadDate" content="2015-08-31 14:40:04"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+     <p> Deux enfants sont envoyés passer une semaine en Pennsylvanie, dans la ferme de leurs grands-parents. Mais lorsque l'un d'eux découvre qu'ils sont impliqués dans quelque chose de profondément dérangeant, leurs chances de retour s'amenuisent de jour en jour.</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-287" href="#72015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-297" href="#72015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-307" href="#72015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-317" href="#72015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-017" href="#72015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-027" href="#72015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-037" href="#72015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=72015-10-28 >
+     <meta itemprop="startDate" content="2015-10-28 15:45"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">15:45</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=72015-10-29 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=72015-10-30 >
+   <meta itemprop="startDate" content="2015-10-30 15:45"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">15:45</div><div class="underline"></div><div class"langue">VF</div></button>
+   <meta itemprop="startDate" content="2015-10-30 22:30"/>
+   <button type="button" class="btn btn-default"><div class="h4">22:30</div><div class="underline"></div><div class"langue">VF</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=72015-10-31 >
+   <meta itemprop="startDate" content="2015-10-31 22:30"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">22:30</div><div class="underline"></div><div class"langue">VF</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=72015-11-01 >
+  <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+</div>
+<div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=72015-11-02 >
+  <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+</div>
+<div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=72015-11-03 >
+ <meta itemprop="startDate" content="2015-11-03 18:00"/>
+ <button type="button" class="btn btn-default premier"><div class="h4">18:00</div><div class="underline"></div><div class"langue">VF</div></button>
+</div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="l-etudiante-et-monsieur-henri-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface l-etudiante-et-monsieur-henri" >
+    <meta itemprop="name" content="L&#039;&Eacute;tudiante et Monsieur Henri">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048576_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">L&#039;&Eacute;tudiante et Monsieur Henri</a></h3>
+      <meta itemprop="datePublished" content="2015-10-07"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="2.6666666666667"/>
+           <meta itemprop="ratingCount" content="3"/>
+           <meta itemprop="reviewCount" content="3"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT98M"/>
+       <div class="separateur">|</div><div class="duree"> 1h38min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Com&eacute;die dramatique</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/ivan-calberac"><span itemprop="name">Ivan Calb&eacute;rac</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9835,"video_url":"vid_55fee6a15a6bf","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048577_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fl-etudiante-et-monsieur-henri"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048577_570x300.jpg"/>
+        <meta itemprop="name" content="L&#039;&Eacute;tudiante et Monsieur Henri"/>
+        <meta itemprop="description" content="Bande annonce -  VF"/>
+        <meta itemprop="uploadDate" content="2015-09-20 19:02:25"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+      <p>A cause de sa santé vacillante, <i>Monsieur Henri</i> ne peut plus vivre seul dans son appartement parisien. Particulièrement bougon, il finit néanmoins par accepter la proposition de son fils <i>Paul</i> de louer une chambre à une jeune étudiante.&nbsp;</p><p>Loin de tomber sous le charme, <i>Henri</i> va se servir d'elle pour créer un véritable chaos familial…</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-288" href="#82015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-298" href="#82015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-308" href="#82015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-318" href="#82015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-018" href="#82015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-028" href="#82015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-038" href="#82015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=82015-10-28 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=82015-10-29 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=82015-10-30 >
+     <meta itemprop="startDate" content="2015-10-30 18:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">18:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+     <meta itemprop="startDate" content="2015-10-30 20:20"/>
+     <button type="button" class="btn btn-default"><div class="h4">20:20</div><div class="underline"></div><div class"langue"> VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=82015-10-31 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=82015-11-01 >
+   <meta itemprop="startDate" content="2015-11-01 16:00"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=82015-11-02 >
+  <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+</div>
+<div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=82015-11-03 >
+ <meta itemprop="startDate" content="2015-11-03 18:00"/>
+ <button type="button" class="btn btn-default premier"><div class="h4">18:00</div><div class="underline"></div><div class"langue"> VF</div></button>
+</div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="le-labyrinthe-la-terre-brulee-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface le-labyrinthe-la-terre-brulee" >
+    <meta itemprop="name" content="Le Labyrinthe : la terre br&ucirc;l&eacute;e">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048224_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Le Labyrinthe : la terre br&ucirc;l&eacute;e</a></h3>
+      <meta itemprop="datePublished" content="2015-10-07"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="3.25"/>
+           <meta itemprop="ratingCount" content="4"/>
+           <meta itemprop="reviewCount" content="4"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT133M"/>
+       <div class="separateur">|</div><div class="duree"> 2h13min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Science-Fiction</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/wes-ball"><span itemprop="name">Wes Ball</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9667,"video_url":"vid_55de262ee62b7","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048652_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fle-labyrinthe-la-terre-brulee"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048652_570x300.jpg"/>
+        <meta itemprop="name" content="Le Labyrinthe : la terre br&ucirc;l&eacute;e"/>
+        <meta itemprop="description" content=" Bande annonce finale - VF"/>
+        <meta itemprop="uploadDate" content="2015-08-26 22:48:46"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+      <p><i>Thomas</i>  et les autres <i>Blocards</i> vont devoir faire face à leur plus grand défi, rechercher des indices à propos de la mystérieuse et puissante organisation connue sous le nom de <i>Wicked</i>. Or le monde qu'ils découvrent à l'extérieur du Labyrinthe a été ravagé par l'Apocalypse.&nbsp;</p><p>Leur périple les amène à la <i>Terre Brûlée</i>, un paysage de désolation rempli d'obstacles inimaginables. Plus de gouvernement, plus d'ordre, et des hordes de gens en proie à une folie meurtrière qui errent dans les villes en ruine.&nbsp;</p><p>Les <i>Blocards</i> vont devoir unir leurs forces avec d'autres combattants pour pouvoir affronter <i>Wicked</i> et tenter de défier son immense pouvoir...</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-289" href="#92015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-299" href="#92015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-309" href="#92015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-319" href="#92015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-019" href="#92015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-029" href="#92015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-039" href="#92015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>
+     </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=92015-10-28 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=92015-10-29 >
+     <meta itemprop="startDate" content="2015-10-29 16:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=92015-10-30 >
+     <meta itemprop="startDate" content="2015-10-30 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=92015-10-31 >
+     <meta itemprop="startDate" content="2015-10-31 22:20"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">22:20</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=92015-11-01 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=92015-11-02 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=92015-11-03 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="crimson-peak-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface crimson-peak" >
+    <meta itemprop="name" content="Crimson Peak">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048740_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Crimson Peak</h3>
+      <meta itemprop="datePublished" content="2015-10-14"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="3.7142857142857"/>
+           <meta itemprop="ratingCount" content="7"/>
+           <meta itemprop="reviewCount" content="7"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT119M"/>
+       <div class="separateur">|</div><div class="duree"> 1h59min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Fantastique</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/guillermo-del-toro"><span itemprop="name">Guillermo Del Toro</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9812,"video_url":"vid_55f3e702a6509","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048741_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fcrimson-peak"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048741_570x300.jpg"/>
+        <meta itemprop="name" content="Crimson Peak"/>
+        <meta itemprop="description" content="Bande annonce 2 - VF"/>
+        <meta itemprop="uploadDate" content="2015-09-12 10:49:06"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+    <p>Au début du siècle dernier, <i>Edith Cushing</i>, une jeune romancière en herbe, vit avec son père<i> Carter Cushing</i> à Buffalo, dans l’État de New York. La jeune femme est hantée, au sens propre, par la mort de sa mère. Elle possède le don de communiquer avec les âmes des défunts et reçoit un étrange message de l’au-delà : "Prends garde à Crimson Peak".&nbsp;</p><p>Une marginale dans la bonne société de la ville de par sa fâcheuse "imagination", <i>Edith </i>est tiraillée entre deux prétendants: son ami d’enfance et le docteur <i>Alan McMichael</i> </p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-2810" href="#102015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-2910" href="#102015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-3010" href="#102015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-3110" href="#102015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-0110" href="#102015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-0210" href="#102015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-0310" href="#102015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>
+     </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=102015-10-28 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=102015-10-29 >
+     <meta itemprop="startDate" content="2015-10-29 14:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">14:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=102015-10-30 >
+     <meta itemprop="startDate" content="2015-10-30 22:20"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">22:20</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=102015-10-31 >
+     <meta itemprop="startDate" content="2015-10-31 16:00"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=102015-11-01 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=102015-11-02 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=102015-11-03 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+</div>
+</div>
+</li>
+
+
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="much-loved-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface much-loved" >
+    <meta itemprop="name" content="Much Loved">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+
+        <img itemprop="image" src="http://images.cinefil.com/movies/1048222_112x170.jpg" />
+
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Much Loved</h3>
+      <meta itemprop="datePublished" content="2015-09-16"/>
+      <div class="note">
+
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="4"/>
+           <meta itemprop="ratingCount" content="1"/>
+           <meta itemprop="reviewCount" content="1"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+
+         <i class="glyphicon glyphicon-star"></i>
+
+         <i class="glyphicon glyphicon-star"></i>
+
+         <i class="glyphicon glyphicon-star"></i>
+
+         <i class="glyphicon glyphicon-star-empty"></i>
+
+       <meta itemprop="duration" content="PT108M"/>
+       <div class="separateur">|</div><div class="duree"> 1h48min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Drame</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/nabil-ayouch"><span itemprop="name">Nabil Ayouch</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9666,"video_url":"vid_55de24660a4c0","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1048223_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fmuch-loved"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1048223_570x300.jpg"/>
+        <meta itemprop="name" content="Much Loved"/>
+        <meta itemprop="description" content="Bande annonce"/>
+        <meta itemprop="uploadDate" content="2015-08-26 22:41:10"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+      <p>Marrakech aujourd'hui. Noha, Randa, Soukaina, Hlima et les autres vivent d'amours tarifées. Ce sont des putes, des objets de désir. Les chairs se montrent, les corps s'exhibent et s'excitent, l'argent circule aux rythmes des plaisirs et des humiliations subies. Mais joyeuses et complices, dignes et émancipées dans leur royaume de femmes, elles surmontent la violence d’une société marocaine qui les utilise tout en les condamnant...</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-2811" href="#112015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-2911" href="#112015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-3011" href="#112015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-3111" href="#112015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-0111" href="#112015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-0211" href="#112015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-0311" href="#112015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=112015-10-28 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=112015-10-29 >
+     <meta itemprop="startDate" content="2015-10-29 20:10"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue">VO</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=112015-10-30 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=112015-10-31 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=112015-11-01 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=112015-11-02 >
+   <meta itemprop="startDate" content="2015-11-02 20:10"/>
+   <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue">VO</div></button>
+ </div>
+ <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=112015-11-03 >
+  <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+</div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="everest-4-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface everest-4" >
+    <meta itemprop="name" content="Everest">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1049871_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Everest</h3>
+      <meta itemprop="datePublished" content="2015-09-23"/>
+      <div class="note">
+          <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+           <meta itemprop="ratingValue" content="3"/>
+           <meta itemprop="ratingCount" content="3"/>
+           <meta itemprop="reviewCount" content="3"/>
+           <meta itemprop="bestRating" content="5"/>
+           <meta itemprop="worstRating" content="1"/>
+         </div>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+         <i class="glyphicon glyphicon-star-empty"></i>
+       <meta itemprop="duration" content="PT122M"/>
+       <div class="separateur">|</div><div class="duree"> 2h2min</div>
+     </div><br>
+     <div class="realisateur" >(<span itemprop="genre">Film catastrophe</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/baltasar-kormakur"><span itemprop="name">Baltasar Kormakur</span></p></div>
+     <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+      <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9712,"video_url":"vid_55e444e0ccd8a","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1049763_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Feverest-4"}>
+        <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1049763_570x300.jpg"/>
+        <meta itemprop="name" content="Everest"/>
+        <meta itemprop="description" content="Bande annonce - VF"/>
+        <meta itemprop="uploadDate" content="2015-08-31 14:13:20"/>
+        Bande-Annonce
+      </button>
+    </div>
+    <div class="Synopsis-infos" itemprop="description">
+      <p>Deux expéditions distinctes sont confrontées aux plus violentes tempêtes de neige que l'homme ait connues. Luttant contre l'extrême sévérité des éléments, le courage des grimpeurs est mis à l'épreuve par des obstacles toujours plus difficiles à surmonter alors que leur rêve de toute une vie se transforme en un combat acharné pour leur salut...</p>
+    </div>
+  </div>
+</div>
+<div class="horaires">
+  <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+    <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+     <button  id="2015-10-2812" href="#122015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-2912" href="#122015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-3012" href="#122015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-3112" href="#122015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-0112" href="#122015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-0212" href="#122015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-0312" href="#122015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>
+     </div>
+   </div>
+   <div class="tab-content position-nav">
+    <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=122015-10-28 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=122015-10-29 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=122015-10-30 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=122015-10-31 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=122015-11-01 >
+     <meta itemprop="startDate" content="2015-11-01 20:10"/>
+     <button type="button" class="btn btn-default premier"><div class="h4">20:10</div><div class="underline"></div><div class"langue">VF</div></button>
+   </div>
+   <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=122015-11-02 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+  <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=122015-11-03 >
+    <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+  </div>
+</div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="la-belle-et-le-clochard-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface la-belle-et-le-clochard" >
+    <meta itemprop="name" content="La Belle et le Clochard">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/183678_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">La Belle et le Clochard</h3>
+      <meta itemprop="datePublished" content="1955-12-14"/>
+      <div class="note">
+        <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span>
+        <meta itemprop="duration" content="PT72M"/>
+        <div class="separateur">|</div><div class="duree"> 1h12min</div>
+      </div><br>
+      <div class="realisateur" >(<span itemprop="genre">Film d&#039;animation</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/clyde-geronimi-h-luske-w-jackson"><span itemprop="name">Clyde Geronimi/ H.luske/w.jackson/</span></p></div>
+      <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+        <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":6413,"video_url":"ae3f498d810s","video_mymetype":"video\/x-flv","video_poster":"http:\/\/images.cinefil.com\/movies\/584565_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fla-belle-et-le-clochard"}>
+          <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/584565_570x300.jpg"/>
+          <meta itemprop="name" content="La Belle et le Clochard"/>
+          <meta itemprop="description" content="Bande-annonce sortie Blu-ray 2012"/>
+          <meta itemprop="uploadDate" content="2015-06-27 12:32:07"/>
+          Bande-Annonce
+        </button>
+      </div>
+      <div class="Synopsis-infos" itemprop="description">
+        <p>Lady, une chienne cocker, vit paisiblement auprès de ses maitres et de leur bébé. Mais un jour, tous deux doivent s'absenter et demandent a leur tante de venir garder le bébé et Lady. Mais la vieille femme, venue avec ses deux chats, chasse Lady. Esseulée, la pauvre petite chienne fait la connaissance de Clochard, un chien qui va l'aider...</p>
+      </div>
+    </div>
+  </div>
+  <div class="horaires">
+    <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+      <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+       <button  id="2015-10-2813" href="#132015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-2913" href="#132015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-3013" href="#132015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-3113" href="#132015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-0113" href="#132015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-0213" href="#132015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-0313" href="#132015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>
+       </div>
+     </div>
+     <div class="tab-content position-nav">
+      <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=132015-10-28 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=132015-10-29 >
+       <meta itemprop="startDate" content="2015-10-29 16:00"/>
+       <button type="button" class="btn btn-default premier"><div class="h4">16:00</div><div class="underline"></div><div class"langue">VF</div></button>
+     </div>
+     <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=132015-10-30 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=132015-10-31 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=132015-11-01 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=132015-11-02 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=132015-11-03 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+  </div>
+</div>
+</li>
+<li itemscope itemtype="http://schema.org/ScreeningEvent">
+  <span id="au-royaume-des-singes-NL" class="NL-scroll"></span>
+  <div id="unefichefilm" class="nouvel-interface au-royaume-des-singes" >
+    <meta itemprop="name" content="Au royaume des singes">
+    <div itemprop="location" itemscope itemtype="http://schema.org/MovieTheater"/>
+    <meta itemprop="name" content="Le Dunois">
+    <meta itemprop="screenCount" content="3"/>
+    <meta itemprop="address" content="23 Rue Lambert-Licors - Ch&acirc;teaudun"/>
+  </div>
+  <div class="fiche-film" itemprop="workPresented" itemscope itemtype="http://schema.org/Movie">
+    <div class="img-film">
+        <img itemprop="image" src="http://images.cinefil.com/movies/1049034_112x170.jpg" />
+    </div>
+    <div class="fiche-infos">
+      <h3 itemprop="name">Au royaume des singes</h3>
+      <meta itemprop="datePublished" content="2015-11-11"/>
+      <div class="note">
+        <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span> <span class="glyphicon glyphicon-star no-info"> </span>
+        <meta itemprop="duration" content="PT81M"/>
+        <div class="separateur">|</div><div class="duree"> 1h21min</div>
+      </div><br>
+      <div class="realisateur" >(<span itemprop="genre">Documentaire</span>) de <p itemprop="director" itemscope itemtype="http://schema.org/Person"><meta itemprop="url" content="http://www.cinefil.com/star/alastair-fothergill"><span itemprop="name">Alastair Fothergill</span></p></div>
+      <div class="bande-annonce" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+        <button type="button" class="bande-annonce modal-trigger" data-toggle="modal" data-video={"video_id":9839,"video_url":"vid_560113196e3c9","video_mymetype":"video\/mp4","video_poster":"http:\/\/images.cinefil.com\/movies\/1049036_570x300.jpg","video_descurl":"http%3A%2F%2Fwww.cinefil.com%2Ffilm%2Fau-royaume-des-singes"}>
+          <meta itemprop="thumbnailUrl" content="http://images.cinefil.com/movies/1049036_570x300.jpg"/>
+          <meta itemprop="name" content="Au royaume des singes"/>
+          <meta itemprop="description" content="Au royaume des singes"/>
+          <meta itemprop="uploadDate" content="2015-09-22 10:36:41"/>
+          Bande-Annonce
+        </button>
+      </div>
+      <div class="Synopsis-infos" itemprop="description">
+        <p>L'aventure continue dans la jungle profonde d'Asie Du Sud. Elle nous emmène au coeur de la forêt humide primaire du Sri Lanka, où vivent les Macaques à toque dont la hiérarchie sociale est des plus strictes. Au coeur d'un ancien monde empreint de mystères, caché dans des ruines antiques perdues vit Maya, une jeune macaque pleine de ressources, bien décidée à aider son petit à se faire une place dans ce monde...</p>
+      </div>
+    </div>
+  </div>
+  <div class="horaires">
+    <div class="position-nav btn-toolbar jours-seances mojofire" role="toolbar" aria-label="...">
+      <div class="btn-group nav-tabs perte-mobil boutons-programmation" role="group" aria-label="...">
+       <button  id="2015-10-2814" href="#142015-10-28"type="button" role="group" data-parent=".resultats-ville" data-day="Mercredi" class="btn dayselector btn-default Mercredi"><span class="perte-mobil">Mercredi</span><span class="perte-desktop">Mer.</span><br>28</button> <button  id="2015-10-2914" href="#142015-10-29"type="button" role="group" data-parent=".resultats-ville" data-day="Jeudi" class="btn dayselector btn-default Jeudi"><span class="perte-mobil">Jeudi</span><span class="perte-desktop">Jeu.</span><br>29</button> <button  id="2015-10-3014" href="#142015-10-30"type="button" role="group" data-parent=".resultats-ville" data-day="Vendredi" class="btn dayselector btn-default Vendredi"><span class="perte-mobil">Vendredi</span><span class="perte-desktop">Ven.</span><br>30</button> <button  id="2015-10-3114" href="#142015-10-31"type="button" role="group" data-parent=".resultats-ville" data-day="Samedi" class="btn dayselector btn-default Samedi"><span class="perte-mobil">Samedi</span><span class="perte-desktop">Sam.</span><br>31</button> <button  id="2015-11-0114" href="#142015-11-01"type="button" role="group" data-parent=".resultats-ville" data-day="Dimanche" class="btn dayselector btn-default Dimanche"><span class="perte-mobil">Dimanche</span><span class="perte-desktop">Dim.</span><br>01</button> <button  id="2015-11-0214" href="#142015-11-02"type="button" role="group" data-parent=".resultats-ville" data-day="Lundi" class="btn dayselector btn-default Lundi"><span class="perte-mobil">Lundi</span><span class="perte-desktop">Lun.</span><br>02</button> <button  id="2015-11-0314" href="#142015-11-03"type="button" role="group" data-parent=".resultats-ville" data-day="Mardi" class="btn dayselector btn-default Mardi"><span class="perte-mobil">Mardi</span><span class="perte-desktop">Mar.</span><br>03</button>        </div>
+     </div>
+     <div class="tab-content position-nav">
+      <div role="tabpanel" class="tab-pane fade lesseances Mercredi"  id=142015-10-28 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade lesseances Jeudi"  id=142015-10-29 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade lesseances Vendredi"  id=142015-10-30 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade lesseances Samedi"  id=142015-10-31 >
+        <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade lesseances Dimanche"  id=142015-11-01 >
+       <meta itemprop="startDate" content="2015-11-01 15:45"/>
+       <button type="button" class="btn btn-default premier"><div class="h4">15:45</div><div class="underline"></div><div class"langue">VF</div></button>
+     </div>
+     <div role="tabpanel" class="tab-pane fade lesseances Lundi"  id=142015-11-02 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade lesseances Mardi"  id=142015-11-03 >
+      <button type="button" class="btn btn-default premier nohover"><div class"langue">Aucune <br> séance</div></button>
+    </div>
+  </div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<script src="http://www.cinefil.com/js/jquery-2.1.4.js"></script>
+<script type="text/javascript">
+  $('#NLsub').hide();
+  $(document).ready(function(){
+
+    $('#NLsub').removeClass('perte-desktop');
+    $('#NLsub').removeClass('perte-mobil');
+
+    $(window).one("scroll",function () {
+
+      $(location).attr('href');
+      var pathname = window.location.href;
+      var shownl = function(){
+       $('#NLsub').toggleClass('NLdown')
+     };
+
+     if (pathname.indexOf("NL") >= 0){}
+      else{
+        $('#NLsub').delay( 1500 ).show(0);
+        setTimeout(shownl, 2000);
+      };
+
+    });
+    $("#NLsuscribe").submit(function(e) {
+      e.preventDefault();
+      $('#NLsubmit').hide();
+    });
+
+    $('.closeNL').click(function(e){
+      $('.Newsletterdude').hide();
+    })})
+
+
+  var today =new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  var top_level_div = document.getElementById('resultats-vil');
+  var count = top_level_div.getElementsByTagName('li').length;
+  var yyyy = today.getFullYear();
+  if(dd<10){
+    dd='0'+dd
+  }
+  if(mm<10){
+    mm='0'+mm
+  }
+  var today = yyyy+'-'+mm+'-'+dd;
+  for (i = 1; i <= count ; i++) {
+    var d = document.getElementById(today+i);
+    var donglet = document.getElementById(i+today);
+    d.className = d.className + " active ";
+    donglet.className = donglet.className + " active in";
+  }
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<div class="scrollTopButton"><span class="glyphicon glyphicon-upload"></span></div>
+
+<script src="http://www.cinefil.com/js/jquery-2.1.4.js"></script>
+<script src="http://www.cinefil.com/js/jquery.autocomplete.min.js"></script>
+<script src="http://www.cinefil.com/js/jquery.mobile.custom.js"></script>
+<script src="http://www.cinefil.com/js/bootstrap.js"></script>
+<script src="http://www.cinefil.com/js/jsinput.js"></script>
+<script src="http://www.cinefil.com/js/main.js?version=1.5"></script>
+<script src="http://www.cinefil.com/js/video.js"></script>
+
+<!-- VideoAds -->
+<script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="http://www.cinefil.com/js/videojs.ads.js"></script>
+<script src="http://www.cinefil.com/js/videojs.ima.js"></script>
+<script src="http://www.cinefil.com/js/ads.js"></script>
+<script src="http://www.cinefil.com/js/videojs.ga.min.js"></script>
+{% include 'CineSearchTdcpBundle:Accueil:js.html.twig' %}{% endblock %}

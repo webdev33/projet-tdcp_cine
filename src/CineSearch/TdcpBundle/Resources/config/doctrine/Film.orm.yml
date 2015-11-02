@@ -1,0 +1,30 @@
+CineSearch\TdcpBundle\Entity\Film:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        image:
+            type: blob
+        genre:
+            type: string
+            length: 255
+        acteurs:
+            type: string
+            length: 255
+        cinema:
+            type: string
+            length: 255
+        date:
+            type: date
+        synopsis:
+            type: string
+            length: '500'
+    lifecycleCallbacks: {  }

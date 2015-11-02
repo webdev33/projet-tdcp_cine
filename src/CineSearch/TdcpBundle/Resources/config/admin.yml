@@ -1,0 +1,9 @@
+services:
+    sonata.admin.post:
+        class: CineSearch\TdcpBundle\Admin\CineAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Cinema" }
+        arguments:
+            - ~
+            - CineSearch\TdcpBundle\Entity\Cinema
+            - ~

@@ -1,0 +1,25 @@
+{% block stylesheets %}{% include 'CineSearchTdcpBundle:Accueil:css.html.twig' %}{% endblock %}
+{% block menu %}{% include 'CineSearchTdcpBundle:Accueil:menu.html.twig' %}{% endblock %}
+{% block body %}
+<h1 class="text-center">Movie Search</h1>
+<!-- CONTENT -->
+
+<div class="container-fluid">
+    <div class="row" id="cine">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <a href="{{ path('geoloc') }}"  class="btn btn-primary btn-lg btn-block" role="button">Trouver un cinéma</a>
+        </div>
+    </div>
+    <!--<div class="row" id="search">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Rechercher un film...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>-->
+</div>
+<!-- END CONTENT -->
+{% endblock %}{% block javascripts %}{% include 'CineSearchTdcpBundle:Accueil:js.html.twig' %}{% endblock %}

@@ -1,0 +1,252 @@
+<?php
+
+namespace CineSearch\TdcpBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Film
+ *
+ * @ORM\Table(name="film")
+ * @ORM\Entity
+ */
+class Film
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="blob")
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="genre", type="string", length=255)
+     */
+    private $genre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="acteurs", type="string", length=255)
+     */
+    private $acteurs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cinema", type="string", length=255)
+     */
+    private $cinema;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synopsis", type="string", length=500)
+     */
+    private $synopsis;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Film
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Film
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set genre
+     *
+     * @param string $genre
+     *
+     * @return Film
+     */
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    /**
+     * Get genre
+     *
+     * @return string
+     */
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    /**
+     * Set acteurs
+     *
+     * @param string $acteurs
+     *
+     * @return Film
+     */
+    public function setActeurs($acteurs)
+    {
+        $this->acteurs = $acteurs;
+
+        return $this;
+    }
+
+    /**
+     * Get acteurs
+     *
+     * @return string
+     */
+    public function getActeurs()
+    {
+        return $this->acteurs;
+    }
+
+    /**
+     * Set cinema
+     *
+     * @param string $cinema
+     *
+     * @return Film
+     */
+    public function setCinema($cinema)
+    {
+        $this->cinema = $cinema;
+
+        return $this;
+    }
+
+    /**
+     * Get cinema
+     *
+     * @return string
+     */
+    public function getCinema()
+    {
+        return $this->cinema;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Film
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set synopsis
+     *
+     * @param string $synopsis
+     *
+     * @return Film
+     */
+    public function setSynopsis($synopsis)
+    {
+        $this->synopsis = $synopsis;
+
+        return $this;
+    }
+
+    /**
+     * Get synopsis
+     *
+     * @return string
+     */
+    public function getSynopsis()
+    {
+        return $this->synopsis;
+    }
+}

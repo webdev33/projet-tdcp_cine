@@ -1,0 +1,29 @@
+CineSearch\TdcpBundle\Entity\Cinema:
+    type: entity
+    table: null
+    repositoryClass: CineSearch\TdcpBundle\Entity\CinemaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        adresse:
+            type: text
+        lat:
+            type: string
+            length: 255
+        lng:
+            type: string
+            length: 255
+        lien:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+cinema:
+    path:     /
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:index" }
+
+cinema_show:
+    path:     /{id}/show
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:show" }
+
+cinema_new:
+    path:     /new
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:new" }
+
+cinema_create:
+    path:     /create
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:create" }
+    methods:  POST
+
+cinema_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:edit" }
+
+cinema_update:
+    path:     /{id}/update
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:update" }
+    methods:  [POST, PUT]
+
+cinema_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CineSearchTdcpBundle:Cinema:delete" }
+    methods:  [POST, DELETE]

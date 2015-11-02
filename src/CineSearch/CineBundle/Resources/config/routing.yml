@@ -1,0 +1,3 @@
+cine:
+    path:     /cine/{id}
+    defaults: { _controller: CineSearchCineBundle:Default:index }
