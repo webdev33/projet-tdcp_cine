@@ -22,7 +22,7 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 Installation Tdcp-cine
 ----------------------
 
-git clone https://github.com/Inso-61/MovieSearch.git
+git clone https://github.com/WildCodeSchool/projet-tdcp_cine.git
 
 cd MovieSearch
 
