@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
             new CineSearch\TdcpBundle\CineSearchTdcpBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
@@ -27,7 +26,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-            new CineSearch\CineBundle\CineSearchCineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
