@@ -2,7 +2,6 @@
 
 namespace CineSearch\TdcpBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 class Film
 {
