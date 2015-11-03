@@ -1,5 +1,6 @@
 {
     "name": "apprenti/cine-search",
+    "description": "recherche de cinema par geolocalisation",
     "license": "proprietary",
     "type": "project",
     "autoload": {
