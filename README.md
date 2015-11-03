@@ -24,7 +24,7 @@ Installation Tdcp-cine
 
     git clone https://github.com/WildCodeSchool/projet-tdcp_cine.git
 
-    cd MovieSearch
+    cd projet-tdcp_cine
 
     composer install
 
