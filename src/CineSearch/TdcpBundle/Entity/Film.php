@@ -249,4 +249,33 @@ class Film
     {
         return $this->synopsis;
     }
+    /**
+     * @var string
+     */
+    private $nom;
+
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Films
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
 }
