@@ -1,5 +1,5 @@
 <?php
-namespace Acme\HelloBundle\DataFixtures\ORM;
+namespace CineSearch\TdcpBundle\DataFixtures\ORM;
 
 use CineSearch\TdcpBundle\Entity\Cinema;
 use Doctrine\Common\DataFixtures\FixtureInterface;
@@ -55,6 +55,12 @@ class LoadCinemaData implements FixtureInterface
         $cinema7->setLng(1.675288);
 
         $manager->persist($cinema1);
+        $manager->persist($cinema2);
+        $manager->persist($cinema3);
+        $manager->persist($cinema4);
+        $manager->persist($cinema5);
+        $manager->persist($cinema6);
+        $manager->persist($cinema7);
         $manager->flush();
     }
 }
