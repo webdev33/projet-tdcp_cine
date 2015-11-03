@@ -22,14 +22,26 @@ Installation composer
 Installation Tdcp-cine
 ----------------------
 
+Cloner le projet : 
+
     git clone https://github.com/WildCodeSchool/projet-tdcp_cine.git
 
+Placer vous dans le projet :
+
     cd projet-tdcp_cine
+    
+Installation du projet :
 
     composer install
+    
+Update database :
 
     php app/console doctrine:schema:update --force
+    
+Droits écriture sur logs/ cache/ :
 
     sh bash/chmod.sh
+    
+Insertion des data fixtures :
 
-Le dump SQL pour la liste des cinéma se trouve à la racine sous le nom "cinema.sql"
+    php app/console doctrine:fixtures:load   
