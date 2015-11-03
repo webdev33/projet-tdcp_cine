@@ -2,12 +2,6 @@ cine_search_tdcp_cinema:
     resource: "@CineSearchTdcpBundle/Resources/config/routing/cinema.yml"
     prefix:   /cinema
 
-cine_search_tdcp_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: CineSearchTdcpBundle:Default:index }
-
-# src/CineSearch/TdcpBundle/Resources/config/routing.yml
-
 index:
     path:     /
     defaults: { _controller: CineSearchTdcpBundle:Accueil:index }
@@ -15,9 +9,5 @@ index:
 geoloc:
     path:     /geoloc/
     defaults: { _controller: CineSearchTdcpBundle:Geoloc:geoloc }
-
-cine:
-    path:     /cine/{id}
-    defaults: { _controller: "CineSearchTdcpBundle:Cine:index" }
 
 
