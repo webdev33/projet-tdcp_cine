@@ -7,6 +7,7 @@ namespace CineSearch\TdcpBundle\Entity;
  */
 class Cinema
 {
+
     /**
      * @var integer
      */
@@ -23,24 +24,14 @@ class Cinema
     private $adresse;
 
     /**
-     * @var string
+     * @var float
      */
     private $lat;
 
     /**
-     * @var string
+     * @var float
      */
     private $lng;
-
-    /**
-     * @var string
-     */
-    private $lien;
-
-    /**
-     * @var string
-     */
-    private $name;
 
 
     /**
@@ -104,7 +95,7 @@ class Cinema
     /**
      * Set lat
      *
-     * @param string $lat
+     * @param float $lat
      *
      * @return Cinema
      */
@@ -118,7 +109,7 @@ class Cinema
     /**
      * Get lat
      *
-     * @return string
+     * @return float
      */
     public function getLat()
     {
@@ -128,7 +119,7 @@ class Cinema
     /**
      * Set lng
      *
-     * @param string $lng
+     * @param float $lng
      *
      * @return Cinema
      */
@@ -142,59 +133,10 @@ class Cinema
     /**
      * Get lng
      *
-     * @return string
+     * @return float
      */
     public function getLng()
     {
         return $this->lng;
     }
-
-    /**
-     * Set lien
-     *
-     * @param string $lien
-     *
-     * @return Cinema
-     */
-    public function setLien($lien)
-    {
-        $this->lien = $lien;
-
-        return $this;
-    }
-
-    /**
-     * Get lien
-     *
-     * @return string
-     */
-    public function getLien()
-    {
-        return $this->lien;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Cinema
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 }
-

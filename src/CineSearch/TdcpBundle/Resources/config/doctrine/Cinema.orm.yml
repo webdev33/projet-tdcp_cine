@@ -15,15 +15,8 @@ CineSearch\TdcpBundle\Entity\Cinema:
         adresse:
             type: text
         lat:
-            type: string
-            length: 255
+            type: float
         lng:
-            type: string
-            length: 255
-        lien:
-            type: string
-            length: 255
-        name:
-            type: string
-            length: 255
+            type: float
+
     lifecycleCallbacks: {  }
