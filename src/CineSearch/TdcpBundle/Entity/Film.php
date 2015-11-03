@@ -4,72 +4,54 @@ namespace CineSearch\TdcpBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Film
- *
- * @ORM\Table(name="film")
- * @ORM\Entity
- */
 class Film
 {
+    //Generate code
+
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="image", type="blob")
      */
     private $image;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="genre", type="string", length=255)
      */
     private $genre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="acteurs", type="string", length=255)
      */
     private $acteurs;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="cinema", type="string", length=255)
      */
     private $cinema;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="date")
+     * @var string
      */
     private $date;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="synopsis", type="string", length=500)
      */
     private $synopsis;
 
+    /**
+     * @var string
+     */
+    private $trailer;
 
 
     /**
@@ -205,7 +187,7 @@ class Film
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param string $date
      *
      * @return Film
      */
@@ -219,7 +201,7 @@ class Film
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -249,33 +231,28 @@ class Film
     {
         return $this->synopsis;
     }
-    /**
-     * @var string
-     */
-    private $nom;
-
 
     /**
-     * Set nom
+     * Set trailer
      *
-     * @param string $nom
+     * @param string $trailer
      *
-     * @return Films
+     * @return Film
      */
-    public function setNom($nom)
+    public function setTrailer($trailer)
     {
-        $this->nom = $nom;
+        $this->trailer = $trailer;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get trailer
      *
      * @return string
      */
-    public function getNom()
+    public function getTrailer()
     {
-        return $this->nom;
+        return $this->trailer;
     }
 }

@@ -23,8 +23,11 @@ CineSearch\TdcpBundle\Entity\Film:
             type: string
             length: 255
         date:
-            type: date
-        synopsis:
             type: string
-            length: '500'
+            length: 255
+        synopsis:
+            type: text
+        trailer:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }
